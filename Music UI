@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LightGreen Music Player</title>
+<style>
+    /* General Styles */
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background-color: #1e1e1e;
+        color: #fff;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 50px auto;
+        background-color: #2a2a2a;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+    }
+
+    /* Header */
+    .header {
+        background-color: #90ee90; /* Light green header */
+        padding: 30px;
+        text-align: center;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .header h1 {
+        margin: 0;
+        font-size: 46px;
+        font-weight: 700;
+        color: #1e1e1e;
+        letter-spacing: 2px;
+    }
+
+    .header p {
+        margin-top: 8px;
+        font-size: 16px;
+        color: #111;
+    }
+
+    .search-box {
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .search-box input {
+        width: 60%;
+        padding: 12px 20px;
+        border-radius: 50px;
+        border: none;
+        font-size: 16px;
+        outline: none;
+        background: #3a3a3a;
+        color: #fff;
+    }
+
+    .search-box input::placeholder {
+        color: #bbb;
+    }
+
+    /* Song List */
+    .song-list {
+        padding: 20px;
+    }
+
+    .song-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #333;
+        padding: 15px 20px;
+        margin: 12px 0;
+        border-radius: 12px;
+        transition: 0.3s;
+    }
+
+    .song-item:hover {
+        background-color: #90ee90;
+        color: #1e1e1e;
+    }
+
+    .song-info {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        margin-left: 15px;
+    }
+
+    .song-info img {
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+        object-fit: cover;
+        transition: transform 0.3s;
+    }
+
+    .song-item:hover img {
+        transform: scale(1.05);
+    }
+
+    .song-text {
+        margin-left: 15px;
+    }
+
+    .song-title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .song-artist {
+        font-size: 14px;
+        color: #ccc;
+        margin-top: 5px;
+    }
+
+    audio {
+        width: 200px;
+        outline: none;
+    }
+
+    /* Now Playing */
+    .now-playing {
+        background-color: #90ee90; /* Light green */
+        text-align: center;
+        padding: 25px 20px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        color: #1e1e1e;
+    }
+
+    .now-playing h2 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .now-playing p {
+        margin: 5px 0 0 0;
+        font-size: 16px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .search-box input {
+            width: 90%;
+        }
+        audio {
+            width: 120px;
+        }
+        .song-info img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <h1>LightWave</h1>
+        <p>Fresh light-green music player</p>
+        <div class="search-box">
+            <input type="text" placeholder="Search songs, artists...">
+        </div>
+    </div>
+
+    <!-- Song List -->
+    <div class="song-list">
+        <!-- Song 1 -->
+        <div class="song-item">
+            <div class="song-number">1</div>
+            <div class="song-info">
+                <img src="album1.jpg" alt="Album Art">
+                <div class="song-text">
+                    <div class="song-title">Blinding Lights</div>
+                    <div class="song-artist">The Weeknd</div>
+                </div>
+            </div>
+            <audio controls>
+                <source src="blinding_lights.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <!-- Song 2 -->
+        <div class="song-item">
+            <div class="song-number">2</div>
+            <div class="song-info">
+                <img src="album2.jpg" alt="Album Art">
+                <div class="song-text">
+                    <div class="song-title">Levitating</div>
+                    <div class="song-artist">Dua Lipa</div>
+                </div>
+            </div>
+            <audio controls>
+                <source src="levitating.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <!-- Song 3 -->
+        <div class="song-item">
+            <div class="song-number">3</div>
+            <div class="song-info">
+                <img src="album3.jpg" alt="Album Art">
+                <div class="song-text">
+                    <div class="song-title">Save Your Tears</div>
+                    <div class="song-artist">The Weeknd</div>
+                </div>
+            </div>
+            <audio controls>
+                <source src="save_your_tears.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+
+    <!-- Now Playing -->
+    <div class="now-playing">
+        <h2>Now Playing</h2>
+        <p>Click play on a song to start listening</p>
+    </div>
+</div>
+
+</body>
+</html>
